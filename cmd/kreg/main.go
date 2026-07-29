@@ -27,6 +27,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	err = repository.CreateSchema(db); 
+	if err != nil{
+		log.Fatal(err)
+	}
+
+
+	
 	http.HandleFunc("/", homepagehandler)
 	http.HandleFunc("/secret", secretpagehandler)
 	http.ListenAndServe(cfg.ServerPort, nil)
