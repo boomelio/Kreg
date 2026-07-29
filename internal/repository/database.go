@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	_"modernc.org/sqlite"
+	_ "modernc.org/sqlite"
 )
 
 func Open(path string) (*sql.DB, error) {
@@ -21,4 +21,4 @@ func CreateSchema(db *sql.DB) error {
 	`
 	var _, err = db.Exec(query)
 	return err
-} 
+}

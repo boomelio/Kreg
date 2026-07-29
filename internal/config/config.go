@@ -1,7 +1,9 @@
 package config
+
 import "os"
+
 type Config struct {
-	ServerPort string
+	ServerPort   string
 	DatabasePath string
 }
 
@@ -15,7 +17,7 @@ func Load() Config {
 		databasePath = "data/app.db"
 	}
 	return Config{
-		ServerPort: port,
+		ServerPort:   port,
 		DatabasePath: databasePath,
 	}
 }
